@@ -1,0 +1,17 @@
+.divzagons
+{
+    background-color: #f0ad4e;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+}
+.button1
+{
+    float: left;
+
+}
+.button2
+{
+    float: right;
+
+}
