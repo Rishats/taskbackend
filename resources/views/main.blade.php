@@ -12,33 +12,33 @@
     <h1>Фермочка для овечек</h1>
     </br></br>
 <div class="form-group">
-    {!! Form::label('multipleselect[]', 'Загон 1', ['class' => 'col-lg-2 control-label'] )  !!}
+    {!! Form::label('multipleselect1[]', 'Загон 1', ['class' => 'col-lg-2 control-label'] )  !!}
     <div class="col-lg-10">
-        {!!  Form::select('multipleselect[]', ['honda' => 'Honda', 'toyota' => 'Toyota', 'subaru' => 'Subaru', 'ford' => 'Ford', 'nissan' => 'Nissan'], $selected = null, ['class' => 'form-control', 'multiple' => 'multiple']) !!}
+        {!!  Form::select('multipleselect1[]', $zagon_1, $selected = null, ['class' => 'form-control', 'multiple' => 'multiple']) !!}
     </div>
 </div>
 <!-- Загон второй -->
     </br></br></br></br>
 <div class="form-group">
-    {!! Form::label('multipleselect[]', 'Загон 2', ['class' => 'col-lg-2 control-label'] )  !!}
+    {!! Form::label('multipleselect2[]', 'Загон 2', ['class' => 'col-lg-2 control-label'] )  !!}
     <div class="col-lg-10">
-        {!!  Form::select('multipleselect[]', ['honda' => 'Honda', 'toyota' => 'Toyota', 'subaru' => 'Subaru', 'ford' => 'Ford', 'nissan' => 'Nissan'], $selected = null, ['class' => 'form-control', 'multiple' => 'multiple']) !!}
-    </div>
+        {!!  Form::select('multipleselect[]2',  $zagon_2, $selected = null, ['class' => 'form-control', 'multiple' => 'multiple']) !!}
+</div>
 </div>
 <!-- Загон третий -->
     </br></br></br></br>
 <div class="form-group">
-    {!! Form::label('multipleselect[]', 'Загон 3', ['class' => 'col-lg-2 control-label'] )  !!}
+    {!! Form::label('multipleselect[]3', 'Загон 3', ['class' => 'col-lg-2 control-label'] )  !!}
     <div class="col-lg-10">
-        {!!  Form::select('multipleselect[]', ['honda' => 'Honda', 'toyota' => 'Toyota', 'subaru' => 'Subaru', 'ford' => 'Ford', 'nissan' => 'Nissan'], $selected = null, ['class' => 'form-control', 'multiple' => 'multiple']) !!}
+        {!!  Form::select('multipleselect3[]', $zagon_3, $selected = null, ['class' => 'form-control', 'multiple' => 'multiple']) !!}
     </div>
 </div>
 <!-- Загон четвертый -->
     </br></br></br></br>
 <div class="form-group">
-    {!! Form::label('multipleselect[]', 'Загон 4', ['class' => 'col-lg-2 control-label'] )  !!}
+    {!! Form::label('multipleselect4[]', 'Загон 4', ['class' => 'col-lg-2 control-label'] )  !!}
     <div class="col-lg-10">
-        {!!  Form::select('multipleselect[]', ['honda' => 'Honda', 'toyota' => 'Toyota', 'subaru' => 'Subaru', 'ford' => 'Ford', 'nissan' => 'Nissan'], $selected = null, ['class' => 'form-control', 'multiple' => 'multiple']) !!}
+        {!!  Form::select('multipleselect4[]', $zagon_4, $selected = null, ['class' => 'form-control', 'multiple' => 'multiple']) !!}
     </div>
 </div>
     </br></br></br></br>
