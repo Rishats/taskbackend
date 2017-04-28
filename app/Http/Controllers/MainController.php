@@ -12,30 +12,47 @@ class MainController extends Controller
 {
     public function get()
     {
-        $zagon_o = DB::table('zagon_1')->get();
+        $zagon_all = DB::table('zagon_all')->get();
+        $dbsend = count($zagon_all);
+        $izbitok = $dbsend % 4;
+        $na_divs = $dbsend - $izbitok;
+        $div = $na_divs / 4;
+        $div_1 = $div;
+        $div_2 = $div;
+        $div_3 = $div;
+        $div_4 = $div + $izbitok;
         $zagon_1 = array();
         $zagon_2 = array();
         $zagon_3 = array();
         $zagon_4 = array();
 
-        foreach ($zagon_o as $animal)
+        foreach ($zagon_all as $animal)
         {
-            $zagon_1 = array_add($zagon_1,$animal->id,'Овечка');
+            if($animal->id <= $div_1)
+            {
+            $zagon_1 = array_add($zagon_1,$animal->id,'Овечка '.$animal->id);
+            }
         }
-        $zagon_t = DB::table('zagon_2')->get();
-        foreach ($zagon_t as $animal)
+        foreach ($zagon_all as $animal)
         {
-            $zagon_2 = array_add($zagon_2,$animal->id,'Овечка');
+            if($animal->id > $div_1 and $animal->id <= $div_2 + $div_1)
+            {
+                $zagon_2 = array_add($zagon_2,$animal->id,'Овечка '.$animal->id);
+            }
         }
-        $zagon_fr = DB::table('zagon_3')->get();
-        foreach ($zagon_fr as $animal)
+        foreach ($zagon_all as $animal)
         {
-            $zagon_3 = array_add($zagon_3,$animal->id,'Овечка');
+            if($animal->id > $div_2 + $div_1 and $animal->id <= $div_3 + $div_2 + $div_1)
+            {
+                $zagon_3 = array_add($zagon_3,$animal->id,'Овечка '.$animal->id);
+            }
         }
-        $zagon_f = DB::table('zagon_4')->get();
-        foreach ($zagon_f as $animal)
+        foreach ($zagon_all as $animal)
         {
-            $zagon_4 = array_add($zagon_4,$animal->id,'Овечка');
+            if($animal->id > $div_2 + $div_1 + $div_3 and $animal->id <= $div_4 + $div_3 + $div_2 + $div_1)
+            {
+                $zagon_4 = array_add($zagon_4,$animal->id,'Овечка '.$animal->id);
+            }
         }
         return view('main', compact('zagon_1','zagon_2','zagon_3','zagon_4'));
 
