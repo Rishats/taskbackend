@@ -63,5 +63,20 @@ class MainController extends Controller
         $count = count($zagon_all);
         return view('living', compact('zagon_all','count'));
     }
+    public function getpopulation()
+    {
+        $zagon_all = DB::table('zagon_all')->get();
+        $dbsend = count($zagon_all);
+        $izbitok = $dbsend % 4;
+        $na_divs = $dbsend - $izbitok;
+        $div = $na_divs / 4;
+        $div_1 = $div;
+        $div_2 = $div;
+        $div_3 = $div;
+        $div_4 = $div + $izbitok;
+        $count = count($zagon_all);
+        $max = max($div_1,$div_2,$div_3,$div_4);
+        return view('population', compact('zagon_all','count','div_1','div_2','div_3','div_4','max'));
+    }
 
 }

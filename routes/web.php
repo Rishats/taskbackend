@@ -13,3 +13,4 @@
 
 Route::get('/', 'MainController@get');
 Route::get('/living', 'MainController@getliving');
+Route::get('/population', 'MainController@getpopulation');
