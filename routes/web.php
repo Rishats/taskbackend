@@ -12,3 +12,4 @@
 */
 
 Route::get('/', 'MainController@get');
+Route::get('/living', 'MainController@getliving');

@@ -53,9 +53,9 @@
 </br>
 </br>
 <div>
-    <button type="button" class="btn btn-primary btn-lg btn-block"><a href="/living" class="menu">Посмотреть живых овечек</a></button>
-    <button type="button" class="btn btn-primary btn-lg btn-block"><a href="/dead" class="menu">Посмотреть мертвых овечек</a></button>
-    <button type="button" class="btn btn-primary btn-lg btn-block"><a href="/population" class="menu">Посмотреть населенность загонов</a></button>
+    <button type="button" class="btn btn-primary btn-lg btn-block"><a href="/living" class="menu" target="_blank">Посмотреть живых овечек</a></button>
+    <button type="button" class="btn btn-primary btn-lg btn-block"><a href="/dead" class="menu" target="_blank">Посмотреть мертвых овечек</a></button>
+    <button type="button" class="btn btn-primary btn-lg btn-block"><a href="/population" class="menu" target="_blank">Посмотреть населенность загонов</a></button>
 </div>
 </body>
 </html>

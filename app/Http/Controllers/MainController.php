@@ -57,5 +57,11 @@ class MainController extends Controller
         return view('main', compact('zagon_1','zagon_2','zagon_3','zagon_4'));
 
     }
+    public function getliving()
+    {
+        $zagon_all = DB::table('zagon_all')->get();
+        $count = count($zagon_all);
+        return view('living', compact('zagon_all','count'));
+    }
 
 }
