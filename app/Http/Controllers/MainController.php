@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 class MainController extends Controller
 {
+
     public function get()
     {
         $zagon_all = DB::table('zagon_all')->get();
@@ -77,6 +78,9 @@ class MainController extends Controller
         $count = count($zagon_all);
         $max = max($div_1,$div_2,$div_3,$div_4);
         return view('population', compact('zagon_all','count','div_1','div_2','div_3','div_4','max'));
+    }
+    public function ajax(){
+        return view('ajax');
     }
 
 }
