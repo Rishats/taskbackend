@@ -17,4 +17,9 @@ Route::get('/population', 'MainController@getpopulation');
 Route::post('ajax', function (){
     return $_POST;
 });
+\Route::get('token', function () {
+    return csrf_token();
+});
+
+Route::post('killbyid', 'MainController@kill');
 

@@ -7,13 +7,14 @@
     <link href="css/add.css" rel="stylesheet">
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
+
     <title>Овечки</title>
 </head>
 <body>
 
 <div class="divzagons">
     <h1>Фермочка для овечек</h1>
-    <!-- Загон второй -->
+    <!-- Загон первый-->
     <form action="ajax" method="POST" id="zagon_all">
         {{ csrf_field() }}
         <div class="form-group">
@@ -59,7 +60,18 @@
     </div>
 </div>
 <div class="button1">
-    <button type="button" class="btn btn-success"><a href="/" class="menu">Обновить</a></button>
+    <button type="button" class="btn btn-success"><a href="/" class="menu">Обновить страницу</a></button>
+</div>
+</br>
+</br>
+<div class="button3">
+    <form action="killbyid" method="POST">
+        {{ csrf_field() }}
+        Убить овечку по номеру:<br>
+        <input type="text" name="id" value="0">
+        <br><br>
+        <input type="submit" value="Убить">
+    </form>
 </div>
 </br>
 </br>
@@ -68,8 +80,6 @@
     <button type="button" class="btn btn-primary btn-lg btn-block"><a href="/dead" class="menu" target="_blank">Посмотреть мертвых овечек</a></button>
     <button type="button" class="btn btn-primary btn-lg btn-block"><a href="/population" class="menu" target="_blank">Посмотреть населенность загонов</a></button>
 </div>
-
-
 
 </body>
 </html>

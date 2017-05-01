@@ -1,6 +1,6 @@
 $.ajaxSetup({
     headers: {
-        'X-CSRF-TOKEN': $('meta[name="token"]').attr('content')
+        'X-CSRF-TOKEN': $('meta[name="csrf_token"]').attr('content')
     }
 });
 $(document).ready(function(){
@@ -15,7 +15,7 @@ $(document).ready(function(){
             $.ajax({
                 type: "POST",
                 url: "ajax",
-                data: { zagon_1: zagon_1,zagon_2: zagon_2,zagon_3: zagon_3,zagon_4: zagon_4},
+                data: { "_token": "{{ csrf_token() }}",zagon_1: zagon_1,zagon_2: zagon_2,zagon_3: zagon_3,zagon_4: zagon_4},
                 cache: false,
                 success: function(result){
                     alert(result);
