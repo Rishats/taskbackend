@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Form;
+use function PHPSTORM_META\type;
 use View;
 use Illuminate\Support\Facades\DB;
 
@@ -82,7 +83,10 @@ class MainController extends Controller
     public function kill()
     {
         $id = $_POST["id"];
-        var_dump($id);
+        $number_animals = preg_replace("/[^0-9]/", '', $id);
+        settype($number_animals, "integer");
+        echo 'ОВЕЧКА ПОГИБАЕТ, А МОЖЕТ БЫТЬ И НЕТ.';
+        DB::table('zagon_all')->where('id', '=', $number_animals)->delete();
         return redirect('/');
     }
 
