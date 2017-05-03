@@ -21,6 +21,7 @@ class MainController extends Controller
         DB::table('zagon_dead')->insert(
             ['idanimal' => $number_animals]
         );
+        DB::select('CALL fixid();');
         return redirect('/');
     }
 
