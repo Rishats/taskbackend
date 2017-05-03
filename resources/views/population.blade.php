@@ -26,7 +26,7 @@
             <td>{{ $div_2 }}</td>
             <td>{{ $div_3 }}</td>
             <td>{{ $div_4 }}</td>
-            <td>{{ $max }}</td>
+            <td>Загон 4:    {{ $max }}</td>
         </tr>
         </tbody>
     </table>

@@ -15,7 +15,7 @@
 <div class="divzagons">
     <h1>Фермочка для овечек</h1>
     <!-- Загон первый-->
-    <form action="ajax" method="POST" id="zagon_all">
+    <form action="ajax" method="POST" id="zagon_all" enctype= multipart/form-data>
         {{ csrf_field() }}
         <div class="form-group">
             <label for="zagon_1">Загон 1</label>

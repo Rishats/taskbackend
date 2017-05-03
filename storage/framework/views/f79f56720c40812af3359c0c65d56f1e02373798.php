@@ -15,7 +15,7 @@
 <div class="divzagons">
     <h1>Фермочка для овечек</h1>
     <!-- Загон первый-->
-    <form action="ajax" method="POST" id="zagon_all">
+    <form action="ajax" method="POST" id="zagon_all" enctype= multipart/form-data>
         <?php echo e(csrf_field()); ?>
 
         <div class="form-group">

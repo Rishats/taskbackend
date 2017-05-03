@@ -11,6 +11,15 @@ use Illuminate\Support\Facades\DB;
 
 class MainController extends Controller
 {
+    public function kill()
+    {
+        $id = $_POST["id"];
+        $number_animals = preg_replace("/[^0-9]/", '', $id);
+        settype($number_animals, "integer");
+        echo 'ОВЕЧКА ПОГИБАЕТ, А МОЖЕТ БЫТЬ И НЕТ.';
+        DB::table('zagon_all')->where('id', '=', $number_animals)->delete();
+        return redirect('/');
+    }
 
     public function get()
     {
@@ -80,14 +89,12 @@ class MainController extends Controller
         $max = max($div_1,$div_2,$div_3,$div_4);
         return view('population', compact('zagon_all','count','div_1','div_2','div_3','div_4','max'));
     }
-    public function kill()
+    public function dead()
     {
-        $id = $_POST["id"];
-        $number_animals = preg_replace("/[^0-9]/", '', $id);
-        settype($number_animals, "integer");
-        echo 'ОВЕЧКА ПОГИБАЕТ, А МОЖЕТ БЫТЬ И НЕТ.';
-        DB::table('zagon_all')->where('id', '=', $number_animals)->delete();
-        return redirect('/');
+        $zagon_dead = DB::table('zagon_dead')->get();
+        $count = count($zagon_dead);
+        return view('dead',compact('count','zagon_dead'));
     }
+
 
 }

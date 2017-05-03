@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 28 2017 г., 18:20
+-- Время создания: Май 03 2017 г., 07:05
 -- Версия сервера: 5.7.16
 -- Версия PHP: 7.0.14
 
@@ -42,10 +42,38 @@ INSERT INTO `zagon_all` (`id`) VALUES
 (5),
 (6),
 (7),
-(8),
 (9),
 (10),
-(11);
+(11),
+(12),
+(13),
+(14),
+(15),
+(16),
+(17),
+(18),
+(19),
+(20),
+(21),
+(23);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `zagon_dead`
+--
+
+CREATE TABLE `zagon_dead` (
+  `id` int(11) NOT NULL,
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `zagon_dead`
+--
+
+INSERT INTO `zagon_dead` (`id`, `time`) VALUES
+(1, '2017-05-03 04:01:39');
 
 --
 -- Индексы сохранённых таблиц
@@ -58,6 +86,12 @@ ALTER TABLE `zagon_all`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `zagon_dead`
+--
+ALTER TABLE `zagon_dead`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT для сохранённых таблиц
 --
 
@@ -65,7 +99,12 @@ ALTER TABLE `zagon_all`
 -- AUTO_INCREMENT для таблицы `zagon_all`
 --
 ALTER TABLE `zagon_all`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+--
+-- AUTO_INCREMENT для таблицы `zagon_dead`
+--
+ALTER TABLE `zagon_dead`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
