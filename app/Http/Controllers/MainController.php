@@ -11,12 +11,29 @@ use Illuminate\Support\Facades\DB;
 
 class MainController extends Controller
 {
+    public function killmore()
+    {
+        $id = $_POST["id"];
+        $massiv_with_animals_id = explode(" ", $id);
+        echo 'ЕСЛИ ВЫ СДЕЛАЛИ ВСЕ ВЕРНО. ТО ОВЕЧКИ ПОГИБНУТ :(';
+        foreach ($massiv_with_animals_id as $animal){
+            $animal = preg_replace("/[^0-9]/", '', $animal);
+            settype($animal, "integer");
+            DB::table('zagon_all')->where('id', '=', $animal)->delete();
+            DB::table('zagon_dead')->insert(
+                ['idanimal' => $animal]
+            );
+        }
+        DB::select('CALL fixid();');
+        return redirect('/');
+    }
+
     public function kill()
     {
         $id = $_POST["id"];
         $number_animals = preg_replace("/[^0-9]/", '', $id);
         settype($number_animals, "integer");
-        echo 'ОВЕЧКА ПОГИБАЕТ, А МОЖЕТ БЫТЬ И НЕТ.';
+        echo 'ЕСЛИ ВЫ СДЕЛАЛИ ВСЕ ВЕРНО. ТО ОВЕЧКА ПОГИБНЕТ :(';
         DB::table('zagon_all')->where('id', '=', $number_animals)->delete();
         DB::table('zagon_dead')->insert(
             ['idanimal' => $number_animals]

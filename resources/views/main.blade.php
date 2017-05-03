@@ -77,6 +77,18 @@
     </br>
     </br>
 </div>
+<div class="button4">
+    <form action="killbyidmore" method="POST">
+        {{ csrf_field() }}
+        Убить овечек по номерам:<br>
+        <input type="text" name="id" value="0 1 2">
+        <br><br>
+        <input class="btn btn-warning" type="submit" value="Убить">
+    </form>
+    </br>
+    </br>
+    </br>
+</div>
 <div>
     <form action="/living" target="_blank">
     <button type="submit" class="btn btn-primary btn-lg btn-block">Посмотреть живых овечек</button>

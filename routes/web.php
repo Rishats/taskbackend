@@ -23,4 +23,4 @@ Route::post('ajax', function (){
 });
 
 Route::post('killbyid', 'MainController@kill');
-
+Route::post('killbyidmore', 'MainController@killmore');
