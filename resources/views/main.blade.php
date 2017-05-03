@@ -11,7 +11,6 @@
     <title>Овечки</title>
 </head>
 <body>
-
 <div class="divzagons">
     <h1>Фермочка для овечек</h1>
     <!-- Загон первый-->
@@ -56,11 +55,13 @@
     </br>
 
     <div class="button2">
-        <button type="button" class="btn btn-danger" id="kill">Зарубить овечек</button>
+        <button type="submit" class="btn btn-danger" id="kill">Зарубить овечек</button>
     </div>
 </div>
 <div class="button1">
-    <button type="button" class="btn btn-success"><a href="/" class="menu">Обновить страницу</a></button>
+    <form action="/">
+        <button type="submit" class="btn btn-success">Обновить страницу</button>
+    </form>
 </div>
 </br>
 </br>
@@ -70,15 +71,22 @@
         Убить овечку по номеру:<br>
         <input type="text" name="id" value="0">
         <br><br>
-        <input type="submit" value="Убить">
+        <input class="btn btn-warning" type="submit" value="Убить">
     </form>
+    </br>
+    </br>
+    </br>
 </div>
-</br>
-</br>
 <div>
-    <button type="button" class="btn btn-primary btn-lg btn-block"><a href="/living" class="menu" target="_blank">Посмотреть живых овечек</a></button>
-    <button type="button" class="btn btn-primary btn-lg btn-block"><a href="/dead" class="menu" target="_blank">Посмотреть мертвых овечек</a></button>
-    <button type="button" class="btn btn-primary btn-lg btn-block"><a href="/population" class="menu" target="_blank">Посмотреть населенность загонов</a></button>
+    <form action="/living" target="_blank">
+    <button type="submit" class="btn btn-primary btn-lg btn-block">Посмотреть живых овечек</button>
+    </form>
+    <form action="/dead" target="_blank">
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Посмотреть мертвых овечек</button>
+    </form>
+    <form action="/population" target="_blank">
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Посмотреть населенность загонов</button>
+    </form>
 </div>
 
 </body>
