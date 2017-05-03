@@ -13,7 +13,7 @@
 <table class="table table-bordered">
     <thead>
     <tr>
-        <th>Номер</th>
+        <th>Номер который был у животного</th>
         <th>Название животного</th>
         <th>Время смерти</th>
     </tr>
@@ -21,7 +21,7 @@
     <tbody>
     @foreach($zagon_dead as $animal)
         <tr>
-            <td>{{ $animal->id }}</td>
+            <td>{{ $animal->idanimal }}</td>
             <td>Овечка</td>
             <td>{{ $animal->time }}</td>
         </tr>

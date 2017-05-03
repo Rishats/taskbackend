@@ -18,6 +18,9 @@ class MainController extends Controller
         settype($number_animals, "integer");
         echo 'ОВЕЧКА ПОГИБАЕТ, А МОЖЕТ БЫТЬ И НЕТ.';
         DB::table('zagon_all')->where('id', '=', $number_animals)->delete();
+        DB::table('zagon_dead')->insert(
+            ['idanimal' => $number_animals]
+        );
         return redirect('/');
     }
 
