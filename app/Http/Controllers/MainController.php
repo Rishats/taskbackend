@@ -19,10 +19,13 @@ class MainController extends Controller
         foreach ($massiv_with_animals_id as $animal){
             $animal = preg_replace("/[^0-9]/", '', $animal);
             settype($animal, "integer");
-            DB::table('zagon_all')->where('id', '=', $animal)->delete();
-            DB::table('zagon_dead')->insert(
-                ['idanimal' => $animal]
-            );
+            if(DB::table('zagon_all')->where('id', '=', $animal)->delete() == true)
+            {
+                DB::table('zagon_dead')->insert(
+                    ['idanimal' => $animal]
+                );
+                echo "Good";
+            }
         }
         DB::select('CALL fixid();');
         return redirect('/');
