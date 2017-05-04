@@ -24,7 +24,6 @@ class MainController extends Controller
                 DB::table('zagon_dead')->insert(
                     ['idanimal' => $animal]
                 );
-                echo "Good";
             }
         }
         DB::select('CALL fixid();');
@@ -37,10 +36,12 @@ class MainController extends Controller
         $number_animals = preg_replace("/[^0-9]/", '', $id);
         settype($number_animals, "integer");
         echo 'ЕСЛИ ВЫ СДЕЛАЛИ ВСЕ ВЕРНО. ТО ОВЕЧКА ПОГИБНЕТ :(';
-        DB::table('zagon_all')->where('id', '=', $number_animals)->delete();
-        DB::table('zagon_dead')->insert(
-            ['idanimal' => $number_animals]
-        );
+        if(DB::table('zagon_all')->where('id', '=', $number_animals)->delete() == true)
+        {
+            DB::table('zagon_dead')->insert(
+                ['idanimal' => $number_animals]
+            );
+        }
         DB::select('CALL fixid();');
         return redirect('/');
     }
