@@ -27,7 +27,7 @@ class MainController extends Controller
             }
         }
         DB::select('CALL fixid();');
-        return redirect('/');
+        return redirect('/alldone');
     }
 
     public function kill()
@@ -35,7 +35,6 @@ class MainController extends Controller
         $id = $_POST["id"];
         $number_animals = preg_replace("/[^0-9]/", '', $id);
         settype($number_animals, "integer");
-        echo 'ЕСЛИ ВЫ СДЕЛАЛИ ВСЕ ВЕРНО. ТО ОВЕЧКА ПОГИБНЕТ :(';
         if(DB::table('zagon_all')->where('id', '=', $number_animals)->delete() == true)
         {
             DB::table('zagon_dead')->insert(
@@ -43,7 +42,7 @@ class MainController extends Controller
             );
         }
         DB::select('CALL fixid();');
-        return redirect('/');
+        return redirect('/alldone');
     }
 
     public function get()

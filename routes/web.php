@@ -21,6 +21,9 @@ Route::post('ajax', function (){
 \Route::get('token', function () {
     return csrf_token();
 });
+\Route::get('alldone', function () {
+    return view('alldone');
+});
 
 Route::post('killbyid', 'MainController@kill');
 Route::post('killbyidmore', 'MainController@killmore');
