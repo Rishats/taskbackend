@@ -31,6 +31,7 @@ class Kernel extends ConsoleKernel
             DB::table('zagon_all')-> insertGetId(
                 []
             );
+            DB::select('CALL fixid();');
         })->everyMinute();
     }
 

@@ -15,7 +15,6 @@ class MainController extends Controller
     {
         $id = $_POST["id"];
         $massiv_with_animals_id = explode(" ", $id);
-        echo 'ЕСЛИ ВЫ СДЕЛАЛИ ВСЕ ВЕРНО. ТО ОВЕЧКИ ПОГИБНУТ :(';
         foreach ($massiv_with_animals_id as $animal){
             $animal = preg_replace("/[^0-9]/", '', $animal);
             settype($animal, "integer");
