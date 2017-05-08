@@ -27,12 +27,17 @@ class Kernel extends ConsoleKernel
 
     protected function schedule(Schedule $schedule)
     {
-        $schedule->call(function () {
+/*        $schedule->call(function () {
+        $virtual_live = true;
+        while ($virtual_live == true) {
             DB::table('zagon_all')-> insertGetId(
                 []
             );
             DB::select('CALL fixid();');
-        })->everyMinute();
+            sleep(10);
+
+        }
+        })->everyMinute();*/
     }
 
 

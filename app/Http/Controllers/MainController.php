@@ -11,6 +11,45 @@ use Illuminate\Support\Facades\DB;
 
 class MainController extends Controller
 {
+    public function startvirtuallive()
+    {
+        $this->virtuallive(true);
+        $this->virtuallivekiller(true);
+
+    }
+
+    public function stopvirtuallive()
+    {
+        $this->virtuallive(false);
+        $this->virtuallivekiller(false);
+    }
+    public function virtuallivekiller($virtual_livekiller = true)
+    {
+        while ($virtual_livekiller == true) {
+            DB::select('CALL fixid();');
+            if(DB::table('zagon_all')->where('id', '=', 1)->delete() == true)
+            {
+
+                DB::table('zagon_dead')->insert(
+                    ['idanimal' => 1]
+                );
+                DB::select('CALL fixid();');
+            }
+            sleep(100);
+        }
+    }
+    public function virtuallive($virtual_live = true)
+    {
+        while ($virtual_live == true) {
+            DB::table('zagon_all')-> insertGetId(
+                []
+            );
+            DB::select('CALL fixid();');
+            sleep(10);
+
+        }
+    }
+
     public function killmore()
     {
         $id = $_POST["id"];

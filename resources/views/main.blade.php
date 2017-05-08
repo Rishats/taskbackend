@@ -89,6 +89,23 @@
     </br>
     </br>
 </div>
+</br>
+</br>
+</br>
+</br>
+<div class="ramka">
+    </br>
+    <form action="/startvirtuallive" method="get">
+    <button type="submit" class="btn btn-success">Запустить виртуальную жизнь</button>
+    </form>
+    </br>
+    </br>
+    <form action="/stopvirtuallive" method="get">
+    <button type="submit" class="btn btn-warning">Остановить виртуальную жизнь</button>
+    </br>
+    </form>
+</div>
+</br>
 <div>
     <form action="/living" target="_blank">
     <button type="submit" class="btn btn-primary btn-lg btn-block">Посмотреть живых овечек</button>
