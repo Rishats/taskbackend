@@ -16,7 +16,9 @@ Route::get('/living', 'MainController@getliving');
 Route::get('/population', 'MainController@getpopulation');
 Route::get('/dead', 'MainController@dead');
 Route::get('/startvirtuallive', 'MainController@startvirtuallive');
+Route::get('/startvirtuallivekiller', 'MainController@startvirtuallivekiller');
 Route::get('/stopvirtuallive', 'MainController@stopvirtuallive');
+Route::get('/stopvirtuallivekiller', 'MainController@stopvirtuallivekiller');
 Route::post('ajax', function (){
     return $_POST;
 });

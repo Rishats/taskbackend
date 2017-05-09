@@ -94,16 +94,29 @@
 </br>
 </br>
 <div class="ramka">
+    <h2>Управление виртуальной жизнью</h2>
     </br>
-    <form action="/startvirtuallive" method="get">
-    <button type="submit" class="btn btn-success">Запустить виртуальную жизнь</button>
-    </form>
+    <div class="ramkaleft">
     </br>
+        <form target="_blank" action="/startvirtuallive" method="get">
+            <button type="submit" class="btn btn-success">Запустить рождаемость</button>
+        </form>
+        </br>
+        <form target="_blank" action="/startvirtuallivekiller" method="get">
+            <button type="submit" class="btn btn-success">Запустить смертность</button>
+        </form>
+    </div>
+    <div class="ramkaright">
+        </br>
+        <form target="_blank" action="/stopvirtuallive" method="get">
+            <button type="submit" class="btn btn-danger">Остановить рождаемость</button>
+        </form>
+        </br>
+        <form target="_blank" action="/stopvirtuallivekiller" method="get">
+            <button type="submit" class="btn btn-danger">Остановить смертность</button>
+        </form>
+    </div>
     </br>
-    <form action="/stopvirtuallive" method="get">
-    <button type="submit" class="btn btn-warning">Остановить виртуальную жизнь</button>
-    </br>
-    </form>
 </div>
 </br>
 <div>

@@ -14,6 +14,10 @@ class MainController extends Controller
     public function startvirtuallive()
     {
         $this->virtuallive(true);
+
+    }
+    public function startvirtuallivekiller()
+    {
         $this->virtuallivekiller(true);
 
     }
@@ -21,7 +25,12 @@ class MainController extends Controller
     public function stopvirtuallive()
     {
         $this->virtuallive(false);
+
+    }
+    public function stopvirtuallivekiller()
+    {
         $this->virtuallivekiller(false);
+
     }
     public function virtuallivekiller($virtual_livekiller = true)
     {
