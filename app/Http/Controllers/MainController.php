@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+set_time_limit ( 0 );
 use Illuminate\Http\Request;
 
 use Form;
@@ -34,27 +34,76 @@ class MainController extends Controller
     }
     public function virtuallivekiller($virtual_livekiller = true)
     {
-        while ($virtual_livekiller == true) {
-            DB::select('CALL fixid();');
-            if(DB::table('zagon_all')->where('id', '=', 1)->delete() == true)
+        if ($virtual_livekiller != false)
+        {
+            DB::table('virtuallive')
+                ->where('id', 1)
+                ->update(['livekiller' => 1]);
+        }
+        if ($virtual_livekiller != true)
+        {
+            DB::table('virtuallive')
+                ->where('id', 1)
+                ->update(['livekiller' => 0]);
+        }
+        while ($virtual_livekiller == true)
+        {
+            $live = DB::table('virtuallive')->get();
+            foreach($live as $animal)
             {
-
-                DB::table('zagon_dead')->insert(
-                    ['idanimal' => 1]
-                );
-                DB::select('CALL fixid();');
+                $now = $animal->livekiller;
             }
-            sleep(100);
+            if($now == 1)
+            {
+                DB::select('CALL fixid();');
+                if(DB::table('zagon_all')->where('id', '=', 1)->delete() == true)
+                {
+
+                    DB::table('zagon_dead')->insert(
+                        ['idanimal' => 1]
+                    );
+                    DB::select('CALL fixid();');
+                }
+                sleep(100);
+            }
+            else
+                {
+                    break;
+                }
+
         }
     }
     public function virtuallive($virtual_live = true)
     {
+        if ($virtual_live != false)
+        {
+            DB::table('virtuallive')
+                ->where('id', 1)
+                ->update(['live' => 1]);
+        }
+        if ($virtual_live != true)
+        {
+            DB::table('virtuallive')
+                ->where('id', 1)
+                ->update(['live' => 0]);
+        }
         while ($virtual_live == true) {
+            $live = DB::table('virtuallive')->get();
+            foreach($live as $animal)
+            {
+                $now = $animal->live;
+            }
+            if($now == 1){
             DB::table('zagon_all')-> insertGetId(
                 []
             );
             DB::select('CALL fixid();');
             sleep(10);
+            }
+            else
+            {
+                break;
+            }
 
         }
     }

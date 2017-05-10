@@ -98,21 +98,21 @@
     </br>
     <div class="ramkaleft">
     </br>
-        <form target="_blank" action="/startvirtuallive" method="get">
+        <form action="/startvirtuallive" method="get">
             <button type="submit" class="btn btn-success">Запустить рождаемость</button>
         </form>
         </br>
-        <form target="_blank" action="/startvirtuallivekiller" method="get">
+        <form action="/startvirtuallivekiller" method="get">
             <button type="submit" class="btn btn-success">Запустить смертность</button>
         </form>
     </div>
     <div class="ramkaright">
         </br>
-        <form target="_blank" action="/stopvirtuallive" method="get">
+        <form action="/stopvirtuallive" method="get">
             <button type="submit" class="btn btn-danger">Остановить рождаемость</button>
         </form>
         </br>
-        <form target="_blank" action="/stopvirtuallivekiller" method="get">
+        <form action="/stopvirtuallivekiller" method="get">
             <button type="submit" class="btn btn-danger">Остановить смертность</button>
         </form>
     </div>
@@ -129,6 +129,8 @@
     <form action="/population" target="_blank">
         <button type="submit" class="btn btn-primary btn-lg btn-block">Посмотреть населенность загонов</button>
     </form>
+</div>
+<div>
 </div>
 
 </body>
