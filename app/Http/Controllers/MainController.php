@@ -38,7 +38,7 @@ class MainController extends Controller
         {
             DB::table('virtuallive')
                 ->where('id', 1)
-                ->update(['live' => 1]);
+                ->update(['livekiller' => 1]);
         }
         else if (!$virtual_livekiller)
         {
