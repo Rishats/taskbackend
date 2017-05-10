@@ -34,13 +34,13 @@ class MainController extends Controller
     }
     public function virtuallivekiller($virtual_livekiller = true)
     {
-        if ($virtual_livekiller != false)
+        if ($virtual_livekiller)
         {
             DB::table('virtuallive')
                 ->where('id', 1)
-                ->update(['livekiller' => 1]);
+                ->update(['live' => 1]);
         }
-        if ($virtual_livekiller != true)
+        else if (!$virtual_livekiller)
         {
             DB::table('virtuallive')
                 ->where('id', 1)
@@ -75,13 +75,13 @@ class MainController extends Controller
     }
     public function virtuallive($virtual_live = true)
     {
-        if ($virtual_live != false)
+        if ($virtual_live)
         {
             DB::table('virtuallive')
                 ->where('id', 1)
                 ->update(['live' => 1]);
         }
-        if ($virtual_live != true)
+        else if (!$virtual_live)
         {
             DB::table('virtuallive')
                 ->where('id', 1)
